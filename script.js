@@ -7,8 +7,8 @@ const computerOptions = ['rock','paper','scissors'];
 function playRound() {
     let playerMove = prompt("Enter ROCK, PAPER, OR SCISSORS to play. Good luck!").toLowerCase();
     let computerMove = computerOptions[Math.floor(Math.random()*3)];
-    console.log(playerMove);
-    console.log(computerMove);
+    console.log("Player Move: "+playerMove);
+    console.log("Computer Move: "+computerMove);
     
     if (playerMove === computerMove) {
         alert("It's a tie!");
@@ -45,3 +45,19 @@ function playRound() {
     }
 }
 
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        playRound();
+        console.log("Player Score: "+playerScore);
+        console.log("Computer Score: "+computerScore);
+        alert("Your score is "+playerScore+" and the computer's score is "+computerScore);
+    }
+    if (playerScore > computerScore) {
+        let difference = Math.abs(playerScore - computerScore);
+        alert("After 5 brutal rounds, you won by "+difference+" points. Congrats!");
+    }
+    else {
+        let difference = Math.abs(playerScore - computerScore);
+        alert("After 5 brutal rounds, you lost by "+difference+" points. Congrats!");
+    }
+}
