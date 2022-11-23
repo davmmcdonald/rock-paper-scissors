@@ -4,12 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="script.js"></script>
+    <title>RPS UI Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4f2a91077e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <script>
-        playGame();
-    </script>
+    <div class="window">
+        <div class="topbar">
+                <a class="win-title">Rock Paper Scissors - UI Edition</a>
+                <i class="fa-solid fa-circle-minus win-btn" style="color: #32CD32;"></i>
+                <i class="fa-solid fa-circle-plus win-btn" style="color: #FFFF66"></i>
+                <i class="fa-solid fa-circle-xmark win-btn" style="color: #FF4500;"></i>
+        </div>
+        <div class="terminal">
+            <p class="info">
+            <span style="color: yellow">$ </span>Welcome to Rock Paper Scissors. To play, enter the command <span class="highlight">play rock|paper|scissors</span> below. To check the score, enter the command <span class="highlight">get score</span>. To find out how many rounds you've played, enter the command <span class="highlight">get round</span>. If you'd like to restart your game, enter the command <span class="highlight">restart</span>.
+            </p>
+        </div>
+        <div class="wrapper">
+            <input class="input" spellcheck="false" placeholder="input command here" autofocus>
+            <i class="fa-solid fa-angle-right"></i>
+        </div>
+    </div>
+    <div class="footer">
+        Created by David McDonald • <a href="https://github.com/davmmcdonald/" target="_blank">View GitHub Profile</a>
+    </div>
 </body>
 </html>
