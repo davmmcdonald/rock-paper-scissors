@@ -4,6 +4,7 @@ let computerScore = 0;
 let round = 0;
 let ties = 0;
 const computerOptions = ['rock','paper','scissors'];
+let previousInput = '';
 
 // Selected element variables
 const prompts = document.querySelectorAll('.highlight');
@@ -86,10 +87,19 @@ function returnError(str) {
 
 // Processes inputted user commands when the enter key is pressed
 window.addEventListener('keydown',e => {
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 && input.value !== '') {
         checkCommand(input.value.toLowerCase());
+        previousInput = input.value;
         input.value = '';
         scrollToBottom();
+    }
+});
+
+// Overwrites input section with previously entered command
+window.addEventListener('keydown',e => {
+    if (e.keyCode === 38 && previousInput !== '') {
+        input.value = previousInput;
+        document.querySelector('.input').focus();
     }
 });
 
